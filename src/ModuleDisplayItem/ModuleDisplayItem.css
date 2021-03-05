@@ -1,0 +1,8 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+}
+.itemName {
+  margin-right: 15px;
+}

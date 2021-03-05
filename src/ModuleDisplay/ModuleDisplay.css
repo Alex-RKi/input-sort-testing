@@ -1,4 +1,9 @@
 .module-display {
   border: 1px solid white;
-  color: black;
+
+  overflow-y: scroll;
+
+}
+.list {
+  list-style: none;
 }

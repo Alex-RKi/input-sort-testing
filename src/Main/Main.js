@@ -6,9 +6,9 @@ export default function Main() {
   return (
     <div className="grid-container">
       <ModuleInput />
-      <ModuleDisplay font='black' bgColor="peachpuff" />
-      <ModuleDisplay font='black' bgColor="violet" />
-      <ModuleDisplay font='white' bgColor="black" />
+      <ModuleDisplay font="black" bgColor="peachpuff" dataType="strings" />
+      <ModuleDisplay font="black" bgColor="violet" dataType="numbers" />
+      <ModuleDisplay font="white" bgColor="black" dataType="mixed" />
     </div>
   );
 }

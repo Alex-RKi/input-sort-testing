@@ -1,10 +1,6 @@
+import moment from "moment";
+
 export const changeSortingMode = (mode) => {
-  //sorting mode: date | alphabet
-  if (mode !== "date" || mode !== "alphabet") {
-    console.log(`Wrong sorting mode passed! 
-                Use "date" or "alphabet"`);
-    return;
-  }
   return {
     type: "CHANGE_SORTING_MODE",
     payload: mode,
@@ -37,9 +33,8 @@ function updateList(newItem, list) {
   const newList = Object.assign({}, list);
   const times = checkTimesAdded(newItem, list);
   if (!times) {
-    console.log(newList);
     newList[newItem] = [];
-    newList[newItem][0] = new Date();
+    newList[newItem][0] = moment().format();
     newList[newItem][1] = 1;
   } else {
     newList[newItem][1] += 1;

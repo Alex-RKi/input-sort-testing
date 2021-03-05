@@ -20,40 +20,37 @@ export default function ModuleInput() {
 
     switch (inputType) {
       case "numbers":
-        console.log("numbers");
         dispatch(addToNumbers(inputStr, numbers));
         break;
       case "strings":
         dispatch(addToStrings(inputStr, strings));
         break;
       case "mixed":
-
         dispatch(addToMixed(inputStr, mixed));
         break;
       default:
         console.log("unknown type! Abort.");
     }
     setInput("");
-
   };
 
   function checkStrType(str) {
     let numbers = 0;
-    let sumbols = 0;
-    for (let sumbol of str) {
-      if (isNaN(parseInt(sumbol))) {
-        sumbols += 1;
+    let symbols = 0;
+    for (let symbol of str) {
+      if (isNaN(parseInt(symbol))) {
+        symbols += 1;
       } else {
         numbers += 1;
       }
     }
-    if (numbers && !sumbols) {
+    if (numbers && !symbols) {
       return "numbers";
     }
-    if (!numbers && sumbols) {
+    if (!numbers && symbols) {
       return "strings";
     }
-    if (numbers && sumbols) {
+    if (numbers && symbols) {
       return "mixed";
     }
     console.log("checkStrType cannot determine str type!");
