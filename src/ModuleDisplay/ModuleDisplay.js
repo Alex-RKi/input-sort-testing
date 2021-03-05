@@ -27,7 +27,6 @@ export default function ModuleDisplay({ font, bgColor, dataType }) {
       return <ModuleDisplayItem key={item} name={item} times={list[item][1]} />;
     });
   };
-
   return (
     <div
       style={{ color: font, backgroundColor: bgColor }}
