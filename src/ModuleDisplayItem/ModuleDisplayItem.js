@@ -6,7 +6,7 @@ export default function ModuleDisplayItem({ name, times }) {
     <>
       <li className="listItem">
         <div className="itemName">{name}</div>
-        <div>x{times}</div>
+        {times > 1 ? <div>x{times}</div> : null}
       </li>
     </>
   );
