@@ -1,6 +1,6 @@
 .grid-container {
   display: grid;
-  height: 95%;
+  height: 95vh;
   max-width: 100vw;
   grid-template:
     "a b" auto
