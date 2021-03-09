@@ -1,4 +1,9 @@
 .listItem {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.itemContainer {
   display: flex;
   flex: auto;
   flex-wrap: nowrap;
@@ -6,7 +11,4 @@
 }
 .itemName {
   margin-right: 2rem;
-}
-.itemTimes {
-  margin-right: 0.5rem;
 }
