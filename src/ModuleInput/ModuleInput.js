@@ -28,31 +28,41 @@ export default function ModuleInput() {
       case "mixed":
         dispatch(addToMixed(inputStr, mixed));
         break;
+      case "symbols":
+        console.log("Only letters and numbers alowed!");
+        break;
+      case "unknown":
+        console.log("Unknown type! Abort.");
+        break;
       default:
-        console.log("unknown type! Abort.");
+        return;
     }
     setInput("");
   };
 
   function checkStrType(str) {
     let numbers = 0;
-    let symbols = 0;
+    let letters = 0;
+
     for (let symbol of str) {
-      if (isNaN(parseInt(symbol))) {
-        symbols += 1;
-      } else {
+      if (/[a-zа-я]/i.test(symbol)) {
+        letters += 1;
+      } else if (/[0-9]/.test(symbol)) {
         numbers += 1;
+      } else {
+        return "symbols";
       }
     }
-    if (numbers && !symbols) {
+    if (numbers && !letters) {
       return "numbers";
     }
-    if (!numbers && symbols) {
+    if (!numbers && letters) {
       return "strings";
     }
-    if (numbers && symbols) {
+    if (numbers && letters) {
       return "mixed";
     }
+
     console.log("checkStrType cannot determine str type!");
     return "unknown";
   }

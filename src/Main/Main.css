@@ -1,9 +1,8 @@
 .grid-container {
-  height: 95%;
   display: grid;
-  width: 100%;
+  height: 95%;
+  max-width: 100vw;
   grid-template:
-    "a b" 1fr
-    "c d" 1fr;
-  color: violet;
+    "a b" auto
+    "c  d" auto;
 }

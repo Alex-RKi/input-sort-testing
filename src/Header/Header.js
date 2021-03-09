@@ -14,7 +14,7 @@ export default function Header() {
   };
   return (
     <div className="header">
-      <div className="headerName">Input sort app</div>
+      
       <select
         onChange={handleSelect}
         className="selectMode"

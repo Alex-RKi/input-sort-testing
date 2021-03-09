@@ -1,5 +1,12 @@
 .listItem {
   display: flex;
-  justify-content: space-between;
-  max-width: 50%;
+  flex: auto;
+  flex-wrap: nowrap;
+  padding: 0.2rem;
+}
+.itemName {
+  margin-right: 2rem;
+}
+.itemTimes {
+  margin-right: 0.5rem;
 }

@@ -1,9 +1,13 @@
 .module-display {
   border: 1px solid white;
-
-  overflow-y: scroll;
-
+  min-width: 50vw;
+  padding: 0.2rem;
+  overflow: scroll;
 }
 .list {
+  max-width: 100%;
   list-style: none;
+  border: 1px solid green;
+  padding: 0;
+  padding-right: 1rem;
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import ModuleDisplayItem from "../ModuleDisplayItem/ModuleDisplayItem";
 import "./ModuleDisplay.css";
@@ -9,14 +8,16 @@ export default function ModuleDisplay({ font, bgColor, dataType }) {
 
   const sortList = (list, mode) => {
     const rawList = Object.keys(list);
+
     if (mode === "date") {
       return rawList.sort((a, b) => {
         const aTime = list[a][0];
         const bTime = list[b][0];
         return aTime.localeCompare(bTime);
       });
-    }
-    if (mode === "alphabet") {
+    } else if (mode === "alphabet" && dataType === "numbers") {
+      return rawList.sort((a, b) => a - b);
+    } else {
       return rawList.sort((a, b) => a.localeCompare(b));
     }
   };
